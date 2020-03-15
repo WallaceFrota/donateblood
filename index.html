@@ -1,0 +1,61 @@
+<!-- DEVELOPED BY: WALLACE FROTA - @frotadev -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <title>Doe Sangue! Doe vida.</title>
+</head>
+<body>
+    <!-- cabeçalho -->
+    <header>
+        <h1>D💊E</h1>
+        <h2 class="sub-title">A sua doação importa.</h2>
+        <p>Até 3 vidas, com uma doação.</p>
+        <p>Apenas 1,9% da população brasileira, doa sangue.</p>
+        <p>Mais de 38.000 doações são necessárias.</p>
+        <button>Quero ajudar</button>
+    </header>
+    <!-- formuário de doação -->
+    <section class="form hide">
+        <h2>Entre na lista de doadores</h2>
+        <form action="/adddonors" method="POST">
+            <input type="hidden" value="{{donors._id}}">
+            <input type="text" name="name" placeholder="Nome completo">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="text" name="blood" placeholder="Tipo sanguíneo">
+            <button type="submit">Quero ajudar</button>
+        </form>
+    </section>
+    <!-- main principal -->
+    <main>
+        <h2>Últimos <span>doadores</span></h2>
+        <section class="donors">
+            {% for donor in donors %}
+            
+                <div class="donor">
+                    <a href="/info/{{donor._id}}">
+                        <div class="blood">{{donor.blood}}</div>
+                        <p>{{donor.name}}</p>
+                    </a>
+                </div>
+
+            {%endfor%}
+        </section>
+    </main>
+    <!-- rodapé -->
+    <footer>
+        <p>Desenvolvido ❤ por FrotaDev</p>
+    </footer>
+
+    <script>
+        // adicionando classe ao formulario de inscrição
+        document.querySelector('header button').addEventListener("click", function() {
+            document.querySelector('.form')
+            .classList.toggle('hide')
+        })
+    </script>
+</body>
+</html>
