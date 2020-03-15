@@ -1,0 +1,132 @@
+/*
+    CASCADING STYLESHEET
+*/
+/* GLOBAL */
+* {
+    /* corrigindo comportamento padrão do css */
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+}
+html, body {
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    /* fonte */
+    font-family: 'Roboto', sans-serif;
+    /* cor de fundo */
+    background-color: #f9f9f9;
+}
+header, main, footer {
+    text-align: center;
+}
+header, .form, main {
+    margin: 0 auto 70px;
+    width: 90%;
+    max-width: 500px;
+}
+/* HEADER */
+header h1, main h2 {
+    margin-bottom: 70px;
+}
+header.sub-title {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 20px;
+}
+header p {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+header button {
+    border: none;
+    padding: 8px 16px;
+    background-color: #ff4f4f;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+/* FORM */
+section.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 45px;
+    align-items: center;
+    background-color: #ff4f4f;
+    padding: 16px 64px;
+    border-radius: 6px;
+}
+section.form h2 {
+    color: #ffffffcc;
+    text-align: right;
+    font-size: 16px;
+}
+form input, form button {
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px #ffffff88 solid;
+}
+form input {
+    background-color: transparent;
+}
+form input::placeholder {
+    color: #ffffff88;
+}
+form button {
+    font-weight: bold;
+}
+/* list donors */
+section.donors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.blood {
+    color: #ff4f4f;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    transform: rotate(-45deg);
+}
+.donor p {
+    margin-top: 24px;
+    font-size: 14px;
+    margin-bottom: 36px;
+    letter-spacing: 1.2px;
+}
+/* footer */
+footer {
+    margin-top: auto;
+    padding: 16px;
+    border:  1px solid #eee;
+}
+
+/* funcionalidade hide form com js */
+section.form {
+    transition: all 300ms;
+}
+section.form.hide {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin-top: -70px;
+}

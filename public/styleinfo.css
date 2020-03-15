@@ -1,0 +1,145 @@
+* {
+    /* corrigindo comportamento padrão do css */
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+}
+/* corpo */
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+/* titulo */
+h3 {
+    font-size: 18pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: tomato;
+    margin-top: 60px;
+}
+/* seção dos dados */
+section.dados {
+    margin-top: 70px;
+    margin-bottom: -28px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(221, 113, 94);
+    width: 90%;
+    max-width: 400px;
+    border-radius: 4px;
+    padding: 16px 64px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+section.dados p {
+    font-size: 18px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.info p {
+    text-align: left;
+    margin-left: 16px;
+}
+.info #email {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: white;
+}
+.info p span {
+    color: white;
+    text-align: right;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.info .blood {
+    font-size: 18px;
+    color: red;
+}
+/* ações nos botoes */
+.btns {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 45px;
+    width: 90%;
+    max-width: 400px;
+    background-color: rgb(14, 1, 1);
+    padding: 16px;
+    margin-top: -8px;
+    border-radius: 0 0 6px 6px;
+    align-items: center;
+}
+.btns a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btns button {
+    font-size: 16px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/* SEÇÃO EDITAR DADOS */
+section.editinfo {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: tomato;
+    grid-gap: 45px;
+    padding: 16px 64px;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 400px;
+    align-items: center;
+}
+section.editinfo.hide {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+.editinfo p {
+    text-align: right;
+    font-size: 14px;
+    color: #ffffffcc;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form input, form button {
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px #ffffff88 solid;
+}
+form input {
+    background-color: transparent;
+}
+form button {
+    font-weight: bold;
+}
+/* seção dos dados atuais */
+section.dados.hide {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+/* rodapé */
+footer {
+    margin-top: auto;
+    padding: 16px;
+    border-top: 1px solid #eee;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
