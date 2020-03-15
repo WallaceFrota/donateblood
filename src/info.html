@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styleinfo.css">
+    <title>DADOS DO USUÁRIO</title>
+</head>
+<body>
+    <h3>DOE SANGUE! SALVE VIDAS!!!</h3>
+    <!-- section dados -->
+    <section class="dados">
+        <p>DADOS DO USUÁRIO</p>
+        <div class="info">
+            <p>Nome: {{donors.name}}</p>
+            <p>Email: <input id="email" value={{donors.email}} readonly/></p>
+            <p>Tipo sanguíneo: <span class="blood">{{donors.blood}}</span></p>
+        </div>
+    </section>
+    <!-- section editar dados -->
+    <section class="editinfo hide">
+        <p>Editar dados</p>
+        <form action="/editinfo" method="POST">
+            <input type="hidden" name="_id" value={{donors._id}}>
+            <input type="text" name="name" value="{{donors.name}}">
+            <input type="email" name="email" value="{{donors.email}}">
+            <button type="submit">Atualizar</button>
+        </form>
+    </section>
+    <!-- section dos botões -->
+    <div class="btns">
+        <div>
+            <a href="/deleteuser/{{donors._id}}">Excluir</a>
+        </div>
+        <div>
+            <button id="btnCopy">Copiar Email</button>
+        </div>
+        <div>
+            <button id="editar">Atualizar Dados</button>
+        </div>
+    </div>
+    <!-- rodapé -->
+    <footer>
+        <p>Desenvolvido FrotaDev</p>
+    </footer>
+
+    <script>
+        //  <!-- script copiar email -->
+        document.getElementById('btnCopy').addEventListener("click", function() {
+            const email = document.getElementById('email');
+            email.select();
+            document.execCommand('copy')
+        })
+
+        // função open section of edit
+        document.getElementById('editar').addEventListener('click', function() {
+            document.querySelector('.editinfo').classList.toggle('hide');
+            document.querySelector('.dados').classList.toggle('hide');
+        })
+    </script>
+</body>
+</html>
